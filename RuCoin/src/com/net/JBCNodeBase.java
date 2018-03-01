@@ -11,12 +11,14 @@ import io.netty.util.concurrent.DefaultThreadFactory;
 
 import java.net.InetSocketAddress;
 import java.util.concurrent.ThreadFactory;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 public abstract class JBCNodeBase {
 
     protected final int messageSize;
     protected final InetSocketAddress self;
     protected final InetSocketAddress peer;
-
+    
     protected JBCNodeBase(final InetSocketAddress self, final InetSocketAddress peer, final int messageSize) {
         this.messageSize = messageSize;
         this.self = self;
@@ -24,11 +26,12 @@ public abstract class JBCNodeBase {
     }
 
     public void run() throws Exception {
-        // Configure the peer.
-        final ThreadFactory connectFactory = new DefaultThreadFactory("rendezvous");
+    	Logger.getLogger("io.netty").setLevel(Level.OFF);
+        final ThreadFactory connectFactory = new DefaultThreadFactory("JBCNetwork");
         final NioEventLoopGroup connectGroup = new NioEventLoopGroup(1,
                 connectFactory, NioUdtProvider.MESSAGE_PROVIDER);
         try {
+        	System.out.println("Initializing JBCNode");
             final Bootstrap boot = new Bootstrap();
             boot.group(connectGroup)
                     .channelFactory(NioUdtProvider.MESSAGE_RENDEZVOUS)
@@ -37,10 +40,11 @@ public abstract class JBCNodeBase {
                         public void initChannel(final UdtChannel ch)
                                 throws Exception {
                             ch.pipeline().addLast(
-                                    new LoggingHandler(LogLevel.INFO),
+                                    new LoggingHandler(LogLevel.WARN),
                                     new JBCNodeHandler(messageSize));
                         }
                     });
+            System.out.println("Awaiting peer connections...");
             // Start the peer.
             final ChannelFuture f = boot.connect(peer, self).sync();
             // Wait until the connection is closed.

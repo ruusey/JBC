@@ -11,9 +11,8 @@ public class JBCNodeOne extends JBCNodeBase {
     }
 
     public static void main(final String[] args) throws Exception {
-        final int messageSize = 64 * 1024;
         final InetSocketAddress self = new InetSocketAddress(Config.hostOne, Config.portOne);
         final InetSocketAddress peer = new InetSocketAddress(Config.hostTwo, Config.portTwo);
-        new JBCNodeOne(self, peer, messageSize).run();
+        new JBCNodeOne(self, peer, Config.messageSize).run();
     }
 }
