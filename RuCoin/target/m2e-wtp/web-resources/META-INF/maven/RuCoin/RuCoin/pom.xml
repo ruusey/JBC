@@ -37,6 +37,20 @@
 	    <artifactId>bcprov-jdk15on</artifactId>
 	    <version>1.59</version>
 	</dependency>
+		<!-- https://mvnrepository.com/artifact/io.netty/netty -->
+	<!-- https://mvnrepository.com/artifact/io.netty/netty-all -->
+	<dependency>
+	    <groupId>io.netty</groupId>
+	    <artifactId>netty-all</artifactId>
+	    <version>4.1.6.Final</version>
+	</dependency>
+	<!-- https://mvnrepository.com/artifact/com.barchart.udt/barchart-udt-core -->
+	<dependency>
+	    <groupId>com.barchart.udt</groupId>
+	    <artifactId>barchart-udt-core</artifactId>
+	    <version>2.3.0</version>
+	</dependency>
+
 	
   </dependencies>
 </project>
