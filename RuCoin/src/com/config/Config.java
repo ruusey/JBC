@@ -1,10 +1,12 @@
 package com.config;
 
-public final class Config {
+import java.text.SimpleDateFormat;
 
+public final class Config {
+	
     private Config() {
     }
-
+    public static final SimpleDateFormat TIMESTAMP_FORMAT = new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss");
     public static final String hostOne = "localhost";
     public static final int portOne = 1231;
 
