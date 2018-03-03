@@ -15,7 +15,7 @@ public class JBCAPI {
 	@Path("/text")
 	@Produces("application/json")
 	@Consumes("application/json")
-	public Response sendJRelayTest(@QueryParam("client-id") int clientId,String test){
+	public Response sendJRelayTest(@QueryParam("client-id") int clientId){
 		
 		
 		Response response = new Response();

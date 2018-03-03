@@ -42,6 +42,12 @@
 			<groupId>org.bouncycastle</groupId>
 			<artifactId>bcprov-jdk15on</artifactId>
 			<version>1.59</version>
+			<exclusions>
+                <exclusion>
+                    <groupId>org.javassist</groupId>
+                    <artifactId>javassist</artifactId>
+                </exclusion>
+            </exclusions>
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/io.netty/netty -->
 		<!-- https://mvnrepository.com/artifact/io.netty/netty-all -->
@@ -49,62 +55,106 @@
 			<groupId>io.netty</groupId>
 			<artifactId>netty-all</artifactId>
 			<version>4.1.6.Final</version>
+			<exclusions>
+                <exclusion>
+                    <groupId>org.javassist</groupId>
+                    <artifactId>javassist</artifactId>
+                </exclusion>
+            </exclusions>
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/com.barchart.udt/barchart-udt-core -->
-		<dependency>
-			<groupId>com.barchart.udt</groupId>
-			<artifactId>barchart-udt-core</artifactId>
-			<version>2.3.0</version>
-		</dependency>
 
 		<!-- https://mvnrepository.com/artifact/com.barchart.udt/barchart-udt-bundle -->
 		<dependency>
 			<groupId>com.barchart.udt</groupId>
 			<artifactId>barchart-udt-bundle</artifactId>
 			<version>2.3.0</version>
+			<exclusions>
+                <exclusion>
+                    <groupId>org.javassist</groupId>
+                    <artifactId>javassist</artifactId>
+                </exclusion>
+            </exclusions>
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/org.bitcoinj/bitcoinj-core -->
 		<dependency>
 			<groupId>org.bitcoinj</groupId>
 			<artifactId>bitcoinj-core</artifactId>
 			<version>0.14.3</version>
+			<exclusions>
+                <exclusion>
+                    <groupId>org.javassist</groupId>
+                    <artifactId>javassist</artifactId>
+                </exclusion>
+            </exclusions>
 		</dependency>
-		<dependency>
-			<groupId>org.bitcoinj</groupId>
-			<artifactId>bitcoinj-core</artifactId>
-			<version>0.14.6</version>
-			<scope>compile</scope>
-		</dependency>
+		
 		 <dependency>
             <groupId>org.hyperledger.fabric-sdk-java</groupId>
             <artifactId>fabric-sdk-java</artifactId>
             <version>1.1.0-alpha</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.javassist</groupId>
+                    <artifactId>javassist</artifactId>
+                </exclusion>
+            </exclusions>
          </dependency>
          <dependency>
 			<groupId>javax.ws.rs</groupId>
 			<artifactId>javax.ws.rs-api</artifactId>
 			<version>${jaxrs.version}</version>
+			<exclusions>
+                <exclusion>
+                    <groupId>org.javassist</groupId>
+                    <artifactId>javassist</artifactId>
+                </exclusion>
+            </exclusions>
 		</dependency>
 		<!-- Jersey 2.19 -->
 		<dependency>
 			<groupId>org.glassfish.jersey.containers</groupId>
 			<artifactId>jersey-container-servlet</artifactId>
 			<version>${jersey2.version}</version>
+			<exclusions>
+                <exclusion>
+                    <groupId>org.javassist</groupId>
+                    <artifactId>javassist</artifactId>
+                </exclusion>
+            </exclusions>
 		</dependency>
 		<dependency>
 			<groupId>org.glassfish.jersey.core</groupId>
 			<artifactId>jersey-server</artifactId>
 			<version>${jersey2.version}</version>
+			<exclusions>
+                <exclusion>
+                    <groupId>org.javassist</groupId>
+                    <artifactId>javassist</artifactId>
+                </exclusion>
+            </exclusions>
 		</dependency>
 		<dependency>
 			<groupId>org.glassfish.jersey.media</groupId>
 			<artifactId>jersey-media-multipart</artifactId>
 			<version>${jersey2.version}</version>
+			<exclusions>
+                <exclusion>
+                    <groupId>org.javassist</groupId>
+                    <artifactId>javassist</artifactId>
+                </exclusion>
+            </exclusions>
 		</dependency>
 		<dependency>
 			<groupId>org.glassfish.jersey.core</groupId>
 			<artifactId>jersey-client</artifactId>
 			<version>${jersey2.version}</version>
+			<exclusions>
+                <exclusion>
+                    <groupId>org.javassist</groupId>
+                    <artifactId>javassist</artifactId>
+                </exclusion>
+            </exclusions>
 		</dependency>
 	</dependencies>
 </project>
